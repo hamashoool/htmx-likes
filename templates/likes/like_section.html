@@ -1,0 +1,9 @@
+<div id="likes{{ post.id }}" style="font-size: xx-large;">
+    <a href="" id="l{{ post.id }}" hx-post="/like/post/{{ post.id }}/" hx-target="#likes{{ post.id }}">
+        <i class="fa fa-arrow-circle-up"></i>
+    </a>
+    {{ post.like.likes }}
+    <a href="" hx-post="/dislike/post/{{ post.id }}/" hx-target="#likes{{ post.id }}">
+        <i class="fa fa-arrow-circle-down"></i>
+    </a>
+</div>

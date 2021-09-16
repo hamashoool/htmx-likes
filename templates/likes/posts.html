@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block posts %}
+    <div class="intro">
+        <h2 class="text-center">Latest Articles</h2>
+        <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat,
+            pellentesque ut laoreet vitae. </p>
+    </div>
+    <div class="row articles">
+        {% for post in posts %}
+            <div class="col-sm-6 col-md-4 item">
+                <a href="#"><img class="img-fluid" src="{{ post.img.url }}" alt=""/></a>
+                <h3 class="name">{{ post.title }}</h3>
+                <p class="description">{{ post.description }}</p>
+                <p class="action" >
+                    {% include 'likes/like_section.html' %}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
